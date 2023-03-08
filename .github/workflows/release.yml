@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+      
+
+jobs:
+  release:
+    runs-on: self-hosted
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Build resource pack
+        run: |
+          npm i
+          npm run build:all
+      
+      - name: Create release
+        id: release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with: 
+          draft: false
+          prerelease: false
+          release_name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref }}
+          body_path: CHANGELOG.md
+      
+      - name: Upload 1.19.3 Pack
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.release.outputs.upload_url }}
+          asset_path: pack.zip
+          asset_name: Wynn_Armour_Reborn_${{ github.ref_name }}_1.19.3.zip
+          asset_content_type: application/zip
+          
+          

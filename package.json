@@ -1,0 +1,28 @@
+{
+  "name": "wynn-armour-reborn",
+  "version": "0.0.0",
+  "description": "Simple automated chime resource pack generator to allow for simple sourcing of community textures",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "preversion": "npm run build:all",
+    "postversion": "git push && git push --tags",
+    "build:watch": "tsc -w",
+    "build:compile": "tsc",
+    "build:run": "node dist/index.js",
+    "build:all": "npm run build:compile && npm run build:run"
+  },
+  "author": "Cyn (SlyCedix)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.14.6",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.22.0",
+    "fs-extra": "^11.1.0",
+    "typescript": "^4.7.4",
+    "@types/archiver": "^5.3.1",
+    "archiver": "^5.3.1"
+  }
+}
