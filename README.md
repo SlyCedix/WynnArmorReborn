@@ -23,8 +23,8 @@ Navigate to the [releases](https://github.com/SlyCedix/wynn-armour-reborn/releas
 **Credits will be included in the release that your textures are added in**
 
 1. [Fork the repository](https://github.com/SlyCedix/wynn-armour-reborn/fork)
-2. Clone the repository locally `git clone https://github.com/YOUR_USERNAME/wynn-armour-reborn.git`
-3. Navigate into the repository folder `cd wynn-armour-reborn`
+2. Clone the repository locally `git clone https://github.com/YOUR_USERNAME/WynnArmorReborn.git`
+3. Navigate into the repository folder `cd WynnArmorReborn`
 4. Install dependencies `npm i`
 5. Create the relevant folder for the piece of armor being replaced:
    * Names should be in all lower case
