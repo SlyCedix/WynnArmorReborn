@@ -1,9 +1,7 @@
-import { copyFile, mkdir, readdir, writeFile } from 'fs/promises'
+import { copyFile, mkdir, readdir, rm, writeFile } from 'fs/promises'
 import { copy } from 'fs-extra'
-import { createWriteStream, rmSync } from 'fs';
+import { createWriteStream } from 'fs';
 import archiver from 'archiver';
-
-const cwd = process.cwd();
 
 type NamePredicate = {
     name: string;
@@ -75,7 +73,7 @@ const getFiles = async () => {
 }
 
 const initDirs = async () => {
-    rmSync(`out`, {recursive: true, force: true})
+    await rm(`out`, {recursive: true, force: true})
     
     await copy(`base`, `out`)
 

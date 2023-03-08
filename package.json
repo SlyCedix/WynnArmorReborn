@@ -15,14 +15,14 @@
   "author": "Cyn (SlyCedix)",
   "license": "MIT",
   "devDependencies": {
+    "@types/archiver": "^5.3.1",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.14.6",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
+    "archiver": "^5.3.1",
     "eslint": "^8.22.0",
     "fs-extra": "^11.1.0",
-    "typescript": "^4.7.4",
-    "@types/archiver": "^5.3.1",
-    "archiver": "^5.3.1"
+    "typescript": "^4.7.4"
   }
 }
